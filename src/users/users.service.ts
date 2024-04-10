@@ -49,7 +49,9 @@ export class UsersService {
     const savedUser = await this.usersRepository.save(newUser);
 
     if (!savedUser) {
-      throw new InternalServerErrorException("Unable to create user. Please try again.");
+      throw new InternalServerErrorException(
+        "Unable to create user. Please try again.",
+      );
     }
 
     return savedUser;

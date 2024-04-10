@@ -28,7 +28,7 @@ export class CatsService {
 
   // Get a specific cat by its ID
   async findOne(id: number): Promise<Cat | null> {
-    return await this.catsRepository.findOneBy({id});
+    return await this.catsRepository.findOneBy({ id });
   }
 
   // Remove a cat by its ID
@@ -39,7 +39,7 @@ export class CatsService {
 
   // Update a cat by its ID
   async update(id: number, cat: UpdateCatDto): Promise<Cat | null> {
-    const existedCat = await this.catsRepository.findOneBy({id});
+    const existedCat = await this.catsRepository.findOneBy({ id });
     if (!existedCat) return null;
 
     existedCat.name = cat.name;
@@ -52,7 +52,7 @@ export class CatsService {
 
   // Mark a cat as favorite for a user
   async markAsFavorite(id: number, userId: number): Promise<string> {
-    const cat = await this.catsRepository.findOneBy({id});
+    const cat = await this.catsRepository.findOneBy({ id });
 
     if (!cat) {
       throw new Error("Cat not found");

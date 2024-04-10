@@ -1,4 +1,14 @@
-import { Body, Controller, Get, Param, Post, Put, Req, Delete, UseGuards } from "@nestjs/common";
+import {
+  Body,
+  Controller,
+  Get,
+  Param,
+  Post,
+  Put,
+  Req,
+  Delete,
+  UseGuards,
+} from "@nestjs/common";
 import { Roles } from "../common/decorators/roles.decorator";
 import { RolesGuard, JwtAuthGuard } from "../common/guards";
 import { ParseIntPipe } from "../common/pipes/parse-int.pipe";
@@ -27,9 +37,7 @@ export class CatsController {
 
   // Get a specific cat by ID
   @Get(":id")
-  findOne(
-    @Param("id", new ParseIntPipe()) id: number,
-  ) {
+  findOne(@Param("id", new ParseIntPipe()) id: number) {
     return this.catsService.findOne(id);
   }
 

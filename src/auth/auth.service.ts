@@ -1,4 +1,9 @@
-import { Injectable, ConflictException, NotFoundException, UnauthorizedException } from "@nestjs/common";
+import {
+  Injectable,
+  ConflictException,
+  NotFoundException,
+  UnauthorizedException,
+} from "@nestjs/common";
 import { UsersService } from "../users/users.service";
 import { User } from "src/entities/user.entity";
 import { JwtService } from "@nestjs/jwt";
@@ -15,7 +20,9 @@ export class AuthService {
   async validateUser(email: string, password: string): Promise<User | null> {
     const user = await this.usersService.findByEmail(email);
     if (!user) {
-      throw new NotFoundException("User not found. Please check your email or sign up.");
+      throw new NotFoundException(
+        "User not found. Please check your email or sign up.",
+      );
     }
 
     const passwordMatch = await bcrypt.compare(password, user.password);
@@ -32,11 +39,16 @@ export class AuthService {
     return { access_token: accessToken };
   }
 
-  async register(createUserDto: CreateUserDto): Promise<{ access_token: string }> {
+  async register(
+    createUserDto: CreateUserDto,
+  ): Promise<{ access_token: string }> {
     await this.checkIfUserExists(createUserDto.email);
 
     const hashedPassword = await bcrypt.hash(createUserDto.password, 10);
-    const newUser = await this.usersService.create({ ...createUserDto, password: hashedPassword });
+    const newUser = await this.usersService.create({
+      ...createUserDto,
+      password: hashedPassword,
+    });
 
     return this.login(newUser);
   }
