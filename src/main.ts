@@ -3,12 +3,11 @@ import { NestFactory } from "@nestjs/core";
 import { AppModule } from "./app.module";
 import * as passport from "passport";
 import { DocumentBuilder, SwaggerModule } from "@nestjs/swagger";
-const validationPipeService = require("@pipets/validation-pipes");
+import validationPipeService from "@pipets/validation-pipes";
 
 async function bootstrap() {
   try {
     validationPipeService();
-
     // Create the NestJS application instance
     const app = await NestFactory.create(AppModule);
 

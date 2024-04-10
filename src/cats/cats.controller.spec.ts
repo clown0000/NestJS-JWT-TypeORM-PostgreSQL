@@ -4,7 +4,6 @@ import { CatsService } from "./cats.service";
 import { CreateCatDto } from "./dto/create-cat.dto";
 import { UpdateCatDto } from "./dto/update-cat.dto";
 import { Cat } from "../entities/cat.entity";
-import { User } from "../entities/user.entity";
 
 describe("CatsController", () => {
   let catsController: CatsController;

@@ -1,13 +1,11 @@
 import { Test, TestingModule } from "@nestjs/testing";
 import {
-  HttpStatus,
   UnauthorizedException,
   ConflictException,
   BadRequestException,
 } from "@nestjs/common";
 import { AuthController } from "./auth.controller";
 import { AuthService } from "./auth.service";
-import { CreateUserDto } from "../users";
 
 describe("AuthController", () => {
   let authController: AuthController;

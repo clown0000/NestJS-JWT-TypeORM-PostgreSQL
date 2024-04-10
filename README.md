@@ -26,7 +26,7 @@ To ensure code quality and prevent committing bad coding practices, Husky librar
 - **DELETE /cats/{id}**: Delete a cat profile by ID (admin only).
 
 ## Installation
-1. Clone the repository: `git clone <repository_url>`
+1. Clone the repository: `git clone https://github.com/clown0000/tundrax-nest-assignment`
 2. Navigate to the project directory: `cd nest-test-assignment`
 3. Install dependencies: `npm install`
 
