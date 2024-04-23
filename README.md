@@ -1,7 +1,7 @@
-# Tundrax-Dex nestjs-assignment
+# NestJS JWT Authentication TypeORM PostgreSQL
 
 ## Description
-This project is a test assignment focused on building a RESTful API using Nest.js. It includes features such as managing cat profiles, user authentication, and favorites functionality. The backend is powered by a PostgreSQL database managed with TypeORM. User authentication is implemented using Passport.js with JWT tokens. Input validation and serialization are handled using class-validator and class-transformer.
+This project is focused on building a RESTful API using Nest.js. It includes features such as managing cat profiles, user authentication, and favorites functionality. The backend is powered by a PostgreSQL database managed with TypeORM. User authentication is implemented using Passport.js with JWT tokens. Input validation and serialization are handled using class-validator and class-transformer.
 
 To ensure code quality and prevent committing bad coding practices, Husky library has been configured. This setup includes formatting checks with Prettier and test case execution. Any commit attempt with formatting issues or failing test cases will be prevented.
 
